@@ -7,67 +7,84 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
+    <div id="languageModal" class="language-modal">
+        <div class="language-box">
+          <h2>Choose Your Language</h2>
+          <p>Please select a language to continue</p>
+      
+          <button onclick="setLanguage('en')">English</button>
+          <button onclick="setLanguage('vi')">Tiếng Việt</button>
+        </div>
+      </div>
   <header>
     <nav class="navbar">
-      <h1 class="logo">Celestial Garden</h1>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+        <h1 class="logo" data-i18n="logo">MyWebsite</h1>
+      
+        <ul class="nav-links">
+          <li><a href="#home" data-i18n="home">Home</a></li>
+          <li><a href="#about" data-i18n="about">About</a></li>
+          <li><a href="#services" data-i18n="services">Services</a></li>
+          <li><a href="#contact" data-i18n="contact">Contact</a></li>
+        </ul>
+      
+        <select id="languageSelect" onchange="setLanguage(this.value)">
+          <option value="en">English</option>
+          <option value="vi">Tiếng Việt</option>
+        </select>
+      </nav>
   </header>
 
   <section id="home" class="hero">
-    <h2>Welcome to Clestial Garden</h2>
-    <p>This is a simple beginner-friendly website built with HTML, CSS, and JavaScript.</p>
-    <button onclick="showMessage()">Click Me</button>
+    <h2 data-i18n="heroTitle">Welcome to My Website</h2>
+    <p data-i18n="heroText">
+      This is a simple beginner-friendly website built with HTML, CSS, and JavaScript.
+    </p>
+    <button onclick="showMessage()" data-i18n="clickMe">Click Me</button>
   </section>
-
+  
   <section id="about" class="section">
-    <h2>About Us</h2>
-    <p>
+    <h2 data-i18n="aboutTitle">About Us</h2>
+    <p data-i18n="aboutText">
       We create clean, modern, and responsive websites for businesses, portfolios, and personal brands.
     </p>
   </section>
-
+  
   <section id="services" class="section services">
-    <h2>Our Services</h2>
-
+    <h2 data-i18n="servicesTitle">Our Services</h2>
+  
     <div class="cards">
       <div class="card">
-        <h3>Web Design</h3>
-        <p>Modern and responsive website layouts.</p>
+        <h3 data-i18n="webDesign">Web Design</h3>
+        <p data-i18n="webDesignText">Modern and responsive website layouts.</p>
       </div>
-
+  
       <div class="card">
-        <h3>Development</h3>
-        <p>Functional websites using HTML, CSS, and JavaScript.</p>
+        <h3 data-i18n="development">Development</h3>
+        <p data-i18n="developmentText">Functional websites using HTML, CSS, and JavaScript.</p>
       </div>
-
+  
       <div class="card">
-        <h3>SEO Basics</h3>
-        <p>Simple optimization to help people find your website.</p>
+        <h3 data-i18n="seo">SEO Basics</h3>
+        <p data-i18n="seoText">Simple optimization to help people find your website.</p>
       </div>
     </div>
   </section>
-
+  
   <section id="contact" class="section">
-    <h2>Contact Us</h2>
+    <h2 data-i18n="contactTitle">Contact Us</h2>
+  
     <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
+      <input type="text" placeholder="Your Name" data-placeholder="yourName" required />
+      <input type="email" placeholder="Your Email" data-placeholder="yourEmail" required />
+      <textarea placeholder="Your Message" data-placeholder="yourMessage"></textarea>
+      <button type="submit" data-i18n="sendMessage">Send Message</button>
     </form>
   </section>
-
+  
   <footer>
-    <p>&copy; 2026 MyWebsite. All rights reserved.</p>
+    <p data-i18n="footerText">&copy; 2026 MyWebsite. All rights reserved.</p>
   </footer>
-
+ 
   <script src="script.js"></script>
 </body>
 </html>
