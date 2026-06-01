@@ -1,5 +1,4 @@
-const translations = {
-    vi: {
+export const vi = {
         logo: "Trang Web Của Tôi",
         home: "Trang chủ",
         about: "Giới thiệu",
@@ -29,5 +28,5 @@ const translations = {
     
         footerText: "© 2026 Trang Web Của Tôi. Đã đăng ký bản quyền.",
         alertMessage: "Chào mừng bạn đến với website đầu tiên của tôi!"
-      }
-}
+      
+};

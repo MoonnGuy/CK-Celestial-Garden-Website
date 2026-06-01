@@ -1,5 +1,5 @@
-const translations = {
-    en: {
+export const en = {
+    
       logo: "MyWebsite",
       home: "Home",
       about: "About",
@@ -29,5 +29,5 @@ const translations = {
   
       footerText: "© 2026 MyWebsite. All rights reserved.",
       alertMessage: "Welcome to my first website!"
-    },
-}
+    
+};
