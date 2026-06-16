@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour Schedule Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="languageModal" class="language-modal">
+    <div class="language-box">
+      <h2>Choose Your Language</h2>
+      <p>Please select a language to continue</p>
+
+      <button onclick="setLanguage('en')">English</button>
+      <button onclick="setLanguage('vi')">Tiếng Việt</button>
+    </div>
+  </div>
+
+  <header>
+    <nav class="navbar">
+      <h1 class="logo" data-i18n="logo">MyWebsite</h1>
+
+      <ul class="nav-links">
+        <li><a href="index.html#home" data-i18n="home">Home</a></li>
+        <li><a href="index.html#services" data-i18n="services">Services</a></li>
+        <li><a href="schedule.html" data-i18n="navSchedule">Schedule Tour</a></li>
+        <li><a href="admin.html" data-i18n="adminSchedule">Admin Schedule</a></li>
+      </ul>
+
+      <select id="languageSelect" onchange="setLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="vi">Tiếng Việt</option>
+      </select>
+    </nav>
+  </header>
+
+  <main>
+    <section class="schedule-hero">
+      <p class="eyebrow" data-i18n="adminSchedule">Admin Schedule</p>
+      <h2 data-i18n="adminTitle">Tour Schedule Admin</h2>
+      <p data-i18n="adminText">
+        Review scheduled tours and monitor how many families are booked for each time frame.
+      </p>
+      <button id="refreshAdmin" type="button" data-i18n="refresh">Refresh</button>
+    </section>
+
+    <section class="section admin-section">
+      <div id="adminStatus" class="status-message"></div>
+      <div id="summaryGrid" class="summary-grid"></div>
+
+      <div class="table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Status</th>
+              <th>Created</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="bookingsTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p data-i18n="footerText">&copy; 2026 MyWebsite. All rights reserved.</p>
+  </footer>
+
+  <script type="module" src="./script.js"></script>
+  <script type="module" src="./admin.js"></script>
+</body>
+</html>

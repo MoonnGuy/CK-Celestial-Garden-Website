@@ -6,41 +6,56 @@ const translations = {
   vi
 };
 
-export function setLanguage(language) {
-  console.log("Language clicked:", language);
+export function getCurrentLanguage() {
+  return localStorage.getItem("selectedLanguage") || "en";
+}
 
-  localStorage.setItem("selectedLanguage", language);
+export function translate(key) {
+  const language = getCurrentLanguage();
+  return translations[language]?.[key] || translations.en[key] || key;
+}
+
+export function setLanguage(language) {
+  const selectedLanguage = translations[language] ? language : "en";
+
+  localStorage.setItem("selectedLanguage", selectedLanguage);
+  document.documentElement.lang = selectedLanguage;
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.getAttribute("data-i18n");
 
-    if (translations[language] && translations[language][key]) {
-      element.textContent = translations[language][key];
+    if (translations[selectedLanguage] && translations[selectedLanguage][key]) {
+      element.textContent = translations[selectedLanguage][key];
     }
   });
 
   document.querySelectorAll("[data-placeholder]").forEach((element) => {
     const key = element.getAttribute("data-placeholder");
 
-    if (translations[language] && translations[language][key]) {
-      element.placeholder = translations[language][key];
+    if (translations[selectedLanguage] && translations[selectedLanguage][key]) {
+      element.placeholder = translations[selectedLanguage][key];
     }
   });
 
   const languageSelect = document.getElementById("languageSelect");
   if (languageSelect) {
-    languageSelect.value = language;
+    languageSelect.value = selectedLanguage;
   }
 
   const languageModal = document.getElementById("languageModal");
   if (languageModal) {
     languageModal.style.display = "none";
   }
+
+  window.dispatchEvent(
+    new CustomEvent("languageChanged", {
+      detail: { language: selectedLanguage }
+    })
+  );
 }
 
 export function showMessage() {
-  const language = localStorage.getItem("selectedLanguage") || "en";
-  alert(translations[language].alertMessage);
+  alert(translate("alertMessage"));
 }
 
 export function loadSavedLanguage() {

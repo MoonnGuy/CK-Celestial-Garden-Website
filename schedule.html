@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schedule a Tour</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="languageModal" class="language-modal">
+    <div class="language-box">
+      <h2>Choose Your Language</h2>
+      <p>Please select a language to continue</p>
+
+      <button onclick="setLanguage('en')">English</button>
+      <button onclick="setLanguage('vi')">Tiếng Việt</button>
+    </div>
+  </div>
+
+  <header>
+    <nav class="navbar">
+      <h1 class="logo" data-i18n="logo">MyWebsite</h1>
+
+      <ul class="nav-links">
+        <li><a href="index.html#home" data-i18n="home">Home</a></li>
+        <li><a href="index.html#about" data-i18n="about">About</a></li>
+        <li><a href="index.html#services" data-i18n="services">Services</a></li>
+        <li><a href="schedule.html" data-i18n="navSchedule">Schedule Tour</a></li>
+        <li><a href="index.html#contact" data-i18n="contact">Contact</a></li>
+      </ul>
+
+      <select id="languageSelect" onchange="setLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="vi">Tiếng Việt</option>
+      </select>
+    </nav>
+  </header>
+
+  <main>
+    <section class="schedule-hero">
+      <p class="eyebrow" data-i18n="scheduleEyebrow">Plan your visit</p>
+      <h2 data-i18n="schedulePageTitle">Schedule a Nursing Home Tour</h2>
+      <p data-i18n="schedulePageText">
+        Select a tour date and time, then enter your contact information so we can confirm your visit.
+      </p>
+    </section>
+
+    <section class="section schedule-section">
+      <div class="schedule-layout">
+        <form id="tourForm" class="schedule-card">
+          <h2 data-i18n="scheduleFormTitle">Choose Your Tour Time</h2>
+          <p id="scheduleStatus" class="status-message" data-i18n="loadingSchedule">Loading schedule information...</p>
+
+          <div class="form-group">
+            <label for="tourDate" data-i18n="tourDateLabel">Tour Date</label>
+            <input type="date" id="tourDate" name="tourDate" required />
+          </div>
+
+          <div class="form-group">
+            <label for="tourTime" data-i18n="tourTimeLabel">Tour Time</label>
+            <select id="tourTime" name="tourTime" required disabled>
+              <option value="" data-i18n="selectDateFirst">Select a date first</option>
+            </select>
+          </div>
+
+          <div id="visitorFields" class="visitor-fields" hidden>
+            <h3 data-i18n="visitorInfoTitle">Your Information</h3>
+
+            <div class="form-group">
+              <label for="clientName" data-i18n="clientName">Client Name</label>
+              <input type="text" id="clientName" name="clientName" data-placeholder="clientName" placeholder="Client Name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="clientPhone" data-i18n="clientPhone">Phone Number</label>
+              <input type="tel" id="clientPhone" name="clientPhone" data-placeholder="clientPhone" placeholder="Phone Number" required />
+            </div>
+
+            <div class="form-group">
+              <label for="clientEmail" data-i18n="clientEmailOptional">Email Address (Optional)</label>
+              <input type="email" id="clientEmail" name="clientEmail" data-placeholder="clientEmailOptional" placeholder="Email Address (Optional)" />
+            </div>
+
+            <button type="submit" data-i18n="submitTour">Confirm Tour</button>
+          </div>
+        </form>
+
+        <aside class="tour-info-card">
+          <h2 data-i18n="scheduleDetailsTitle">Tour Details</h2>
+
+          <div class="detail-row">
+            <span data-i18n="durationLabel">Duration</span>
+            <strong id="durationInfo" data-i18n="durationValue">1 hour</strong>
+          </div>
+
+          <div class="detail-row">
+            <span data-i18n="earliestDateLabel">First Available Date</span>
+            <strong id="earliestDateInfo">-</strong>
+          </div>
+
+          <div class="detail-row">
+            <span data-i18n="timezoneLabel">Time Zone</span>
+            <strong id="timezoneInfo">GMT-7:00 PDT</strong>
+          </div>
+
+          <div class="detail-row">
+            <span data-i18n="capacityLabel">Capacity</span>
+            <strong data-i18n="capacityValue">Maximum 2 families per time frame</strong>
+          </div>
+
+          <div class="detail-row">
+            <span data-i18n="intervalLabel">What to expect</span>
+            <strong data-i18n="intervalValue"> A guided 1 hour walkthrough of the resident living quarters, daily activity schedule, 
+              and staff-to-resident ratio consultation. </strong>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="successToast" class="success-toast" hidden>
+    <span data-i18n="bookingSuccessToast">You have successfully scheduled a meeting with Celestial Garden.</span>
+    <button id="closeToast" class="toast-close" type="button" aria-label="Close">✕</button>
+  </div>
+
+  <footer>
+    <p data-i18n="footerText">&copy; 2026 MyWebsite. All rights reserved.</p>
+  </footer>
+
+  <script type="module" src="./script.js"></script>
+  <script type="module" src="./schedule.js"></script>
+</body>
+</html>

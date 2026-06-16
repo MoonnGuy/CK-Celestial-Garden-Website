@@ -1,0 +1,12 @@
+{
+  "name": "tour-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Nursing home tour scheduler with calendar, 30-minute time slots, client form, staff email notifications, and admin booking storage.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
