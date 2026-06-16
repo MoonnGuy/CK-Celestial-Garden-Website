@@ -8,7 +8,7 @@ export const vi = {
       
         heroTitle: "Chào mừng đến với Trại Dưỡng Lão của Chúng Tôi",
         heroText: "Dịch vụ hỗ trợ sinh hoạt đầy ân cần trong không gian ấm cúng, tựa như gia đình.",
-        clickMe: "Bấm vào đây",
+        clickMe: "Đặt lịch tham quan | Liên hệ với chúng tôi ngay hôm nay",
       
         aboutTitle: "Về Trại Dưỡng Lão của Chúng Tôi",
         aboutText: "Tại Celestial Garden, dịch vụ tựa như đang ở nhà",

@@ -9,7 +9,7 @@ export const en = {
     
       heroTitle: "Welcome to Our Nursing Home",
       heroText: "Compassionate Assisted Living in a Warm, Home-Like Environment",
-      clickMe: "Đặt lịch tham quan | Liên hệ với chúng tôi ngay hôm nay",
+      clickMe: "Schedule a Tour | Contact Us Today",
     
       aboutTitle: "About Us",
       aboutText: "At Celestial Garden, we make everyone feel at home.",
