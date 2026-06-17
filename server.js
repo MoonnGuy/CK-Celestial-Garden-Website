@@ -21,7 +21,7 @@ const CONFIG = {
   firstStartTime: '09:00',
   lastStartTime: '16:00',
   maxFamiliesAtSameTime: 2,
-  siteName: process.env.SITE_NAME || 'Westmont of Morgan Hill',
+  siteName: process.env.SITE_NAME || 'Celestial Garden',
   staffEmail: process.env.STAFF_EMAIL || 'ck.celestialarden@gmail.com',
   adminToken: process.env.ADMIN_TOKEN || 'change-me'
 };
