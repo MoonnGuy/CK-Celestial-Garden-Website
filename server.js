@@ -7,7 +7,8 @@ const crypto = require('crypto');
 loadEnvFile();
 
 const PORT = Number(process.env.PORT || 3000);
-const PUBLIC_DIR = path.join(__dirname, 'public');
+// Files are in the repo root (no public/ subfolder)
+const PUBLIC_DIR = __dirname;
 const DATA_DIR = path.join(__dirname, 'data');
 const BOOKINGS_FILE = path.join(DATA_DIR, 'bookings.json');
 
@@ -200,6 +201,14 @@ async function serveStatic(req, res, url) {
 
   const filePath = safeJoin(PUBLIC_DIR, pathname);
   if (!filePath) {
+    sendText(res, 403, 'Forbidden');
+    return;
+  }
+
+  // Block server internals from being downloaded
+  const basename = path.basename(filePath);
+  const BLOCKED = new Set(['server.js', 'package.json', 'package-lock.json', '.env']);
+  if (BLOCKED.has(basename) || basename.startsWith('.')) {
     sendText(res, 403, 'Forbidden');
     return;
   }
@@ -455,12 +464,11 @@ function csvEscape(value) {
 
 async function sendStaffNotification(booking) {
   const message = buildStaffNotificationMessage(booking);
+
   try {
-    const result = await sendStaffEmailNotification(booking, message);
-    console.log(`[email] ✓ Staff notification sent to ${CONFIG.staffEmail}`);
-    return result;
+    return await sendStaffEmailNotification(booking, message);
   } catch (error) {
-    console.error('[email] ✗ Staff notification failed:', error.message);
+    console.error('Staff email notification failed:', error.message);
     return { sent: false, reason: error.message, to: CONFIG.staffEmail };
   }
 }
