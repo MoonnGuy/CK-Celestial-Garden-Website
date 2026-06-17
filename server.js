@@ -7,8 +7,7 @@ const crypto = require('crypto');
 loadEnvFile();
 
 const PORT = Number(process.env.PORT || 3000);
-// Files are in the repo root (no public/ subfolder)
-const PUBLIC_DIR = __dirname;
+const PUBLIC_DIR = path.join(__dirname, 'public');
 const DATA_DIR = path.join(__dirname, 'data');
 const BOOKINGS_FILE = path.join(DATA_DIR, 'bookings.json');
 
@@ -21,7 +20,7 @@ const CONFIG = {
   firstStartTime: '09:00',
   lastStartTime: '16:00',
   maxFamiliesAtSameTime: 2,
-  siteName: process.env.SITE_NAME || 'Celestial Garden',
+  siteName: process.env.SITE_NAME || 'Westmont of Morgan Hill',
   staffEmail: process.env.STAFF_EMAIL || 'ck.celestialarden@gmail.com',
   adminToken: process.env.ADMIN_TOKEN || 'change-me'
 };
@@ -201,14 +200,6 @@ async function serveStatic(req, res, url) {
 
   const filePath = safeJoin(PUBLIC_DIR, pathname);
   if (!filePath) {
-    sendText(res, 403, 'Forbidden');
-    return;
-  }
-
-  // Block server internals from being downloaded
-  const basename = path.basename(filePath);
-  const BLOCKED = new Set(['server.js', 'package.json', 'package-lock.json', '.env']);
-  if (BLOCKED.has(basename) || basename.startsWith('.')) {
     sendText(res, 403, 'Forbidden');
     return;
   }
@@ -527,10 +518,14 @@ async function sendStaffEmailNotification(booking, message) {
     body: JSON.stringify(payload)
   });
 
-  const result = await response.json().catch(() => ({}));
+  // Read raw text first so we always have something meaningful to log
+  const responseText = await response.text();
+  let result = {};
+  try { result = JSON.parse(responseText); } catch { /* not JSON */ }
 
   if (!response.ok || !result.success) {
-    throw new Error(`Web3Forms error ${response.status}: ${result.message || 'Unknown error'}`);
+    const detail = result.message || result.error || responseText.slice(0, 300) || 'Unknown error';
+    throw new Error(`Web3Forms error ${response.status}: ${detail}`);
   }
 
   return { sent: true, provider: 'web3forms', to: CONFIG.staffEmail };
