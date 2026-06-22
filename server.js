@@ -502,42 +502,40 @@ function whatsappLink(phone) {
 }
 
 async function sendStaffEmailNotification(booking, message) {
-  if (!process.env.WEB3FORMS_ACCESS_KEY) {
-    console.log(`[staff email not configured] Would send to ${CONFIG.staffEmail}:\n${message}`);
-    return { sent: false, reason: 'Email provider not configured.', to: CONFIG.staffEmail };
+  if (!process.env.RESEND_API_KEY) {
+    console.log(`[email] Not configured — would send to ${CONFIG.staffEmail}:\n${message}`);
+    return { sent: false, reason: 'RESEND_API_KEY not set in environment.', to: CONFIG.staffEmail };
   }
 
-  const payload = {
-    access_key: process.env.WEB3FORMS_ACCESS_KEY,
-    subject: `New tour request - ${CONFIG.siteName}`,
-    from_name: CONFIG.siteName,
-    message
+  const body = {
+    from:    'Celestial Garden Booking <onboarding@resend.dev>',
+    to:      [CONFIG.staffEmail],
+    subject: `New Tour Request — ${CONFIG.siteName}`,
+    text:    message
   };
 
-  if (booking.email) {
-    payload.replyto = booking.email;
-  }
+  // If the customer provided their email, staff can reply directly to them
+  if (booking.email) body.reply_to = booking.email;
 
-  const response = await fetch('https://api.web3forms.com/submit', {
-    method: 'POST',
+  const response = await fetch('https://api.resend.com/emails', {
+    method:  'POST',
     headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json'
+      'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+      'Content-Type':  'application/json'
     },
-    body: JSON.stringify(payload)
+    body: JSON.stringify(body)
   });
 
-  // Read raw text first so we always have something meaningful to log
   const responseText = await response.text();
   let result = {};
   try { result = JSON.parse(responseText); } catch { /* not JSON */ }
 
-  if (!response.ok || !result.success) {
-    const detail = result.message || result.error || responseText.slice(0, 300) || 'Unknown error';
-    throw new Error(`Web3Forms error ${response.status}: ${detail}`);
+  if (!response.ok) {
+    const detail = result.message || result.name || responseText.slice(0, 300) || 'Unknown error';
+    throw new Error(`Resend error ${response.status}: ${detail}`);
   }
 
-  return { sent: true, provider: 'web3forms', to: CONFIG.staffEmail };
+  return { sent: true, provider: 'resend', to: CONFIG.staffEmail };
 }
 
 function safeJoin(base, target) {
