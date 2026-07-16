@@ -7,7 +7,7 @@ export const en = {
       contact: "Contact",
       navSchedule: "Schedule Tour",
     
-      heroTitle: "Welcome to Our Nursing Home",
+      heroTitle: "Welcome to Celestial Garden",
       heroText: "Compassionate Assisted Living in a Warm, Home-Like Environment",
       clickMe: "Schedule a Tour | Contact Us Today",
     
@@ -19,6 +19,20 @@ export const en = {
       about1:"Celestial Garden is an assisted living and residential care home dedicated to providing comfort, dignity, and compassionate support for adults aged 65 and above. We also care for residents living with memory loss, Parkinson’s disease, stroke recovery needs, head injuries, and other chronic conditions.",
       about2:"Our homes are designed to feel peaceful, familiar, and welcoming. Instead of a large institutional environment, we offer a home-like setting where residents can enjoy companionship, personalized care, and a comfortable daily routine",
       about3:"We believe every resident deserves respect, safety, and kindness. Our caregivers work closely with residents and families to understand individual needs, preferences, and levels of support. Whether a resident needs help with daily activities, meal assistance, companionship, or special attention, our team is here to provide reliable care.",
+
+      servicetitle1:"Memory Care Support",
+      servicetitle2:"Chronic Condition Support",
+      servicetitle3:"Home-Cooked Meals and Nutrition",
+      servicetitle4:"Clean and Comfortable Living Spaces",
+      servicetitle5:"Activities and Companionship",
+      servicetitle6:"Hospice and End-of-Life Support",
+
+      service1:"Celestial Garden welcomes residents with memory loss and cognitive conditions. Our calm, familiar environment helps reduce stress and provides residents with structure, comfort, and meaningful interaction.",
+      service2:"We provide care for residents living with conditions such as Parkinson’s disease, stroke-related challenges, head injuries, and other long-term health conditions.",
+      service3:"Our caregivers prepare three nutritious meals each day, and We pay special attention to dietary needs, personal preferences, and mealtime comfort. Assistance during meals is available for residents who need extra support.",
+      service4:"Our rooms and common areas are designed to feel like home. We keep the environment clean, fresh, and peaceful so residents can feel relaxed and secure.",
+      service5:"We encourage residents to enjoy social connection, light activities, and meaningful daily routines. Indoor and outdoor activities help residents stay engaged throughout the year.",
+      service6:"Hospice care may be available for residents who require comfort-focused support. We work with families and care professionals to help residents receive compassionate attention during sensitive stages of care.",
 
       footer1:"Providing comfort, care, and a welcoming home environment for our residents.",
       scheduleEyebrow: "Plan your visit",

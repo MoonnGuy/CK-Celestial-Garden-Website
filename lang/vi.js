@@ -20,6 +20,21 @@ export const vi = {
         about2: "Những ngôi nhà của chúng tôi được thiết kế để mang lại cảm giác yên bình, thân thuộc và chào đón. Thay vì một môi trường cơ sở lớn mang tính tổ chức, chúng tôi cung cấp không gian giống như ở nhà, nơi cư dân có thể tận hưởng sự bầu bạn, dịch vụ chăm sóc cá nhân hóa và một thói quen sinh hoạt hằng ngày thoải mái.",
         about3: "Chúng tôi tin rằng mỗi cư dân đều xứng đáng được tôn trọng, an toàn và đối xử tử tế. Đội ngũ chăm sóc của chúng tôi làm việc chặt chẽ với cư dân và gia đình để hiểu rõ nhu cầu, sở thích và mức độ hỗ trợ riêng của từng người. Dù cư dân cần trợ giúp trong các hoạt động hằng ngày, hỗ trợ bữa ăn, sự bầu bạn hay sự quan tâm đặc biệt, đội ngũ của chúng tôi luôn sẵn sàng cung cấp dịch vụ chăm sóc đáng tin cậy.",
         
+        servicetitle1:"Hỗ trợ Chăm sóc Trí nhớ",
+        servicetitle2:"Hỗ trợ Người mắc Bệnh mãn tính",
+        servicetitle3:"Bữa ăn Nhà Làm và Đảm Bảo Dinh dưỡng",
+        servicetitle4:"Không gian Sống Sạch sẽ và Thoải mái",
+        servicetitle5:"Các Hoạt động và Sự đồng hành",
+        servicetitle6:"Chăm sóc và Hỗ trợ Giai đoạn Cuối",
+
+        service1:"Celestial Garden chào đón các cư dân gặp vấn đề về suy giảm trí nhớ và nhận thức. Môi trường yên bình, thân thuộc tại đây giúp giảm căng thẳng, đồng thời mang lại sự ổn định và thoải mái.",
+        service2:"Chúng tôi cung cấp dịch vụ chăm sóc cho cư dân mắc các bệnh lý như Parkinson, di chứng sau đột quỵ, chấn thương sọ não và các vấn đề sức khỏe dài hạn khác.",
+        service3:"Đội ngũ chăm sóc chuẩn bị ba bữa ăn đầy đủ dinh dưỡng mỗi ngày; chúng tôi đặc biệt chú trọng đến nhu cầu dinh dưỡng, sở thích cá nhân và sự thoải mái trong giờ ăn. Chúng tôi luôn sẵn sàng hỗ trợ những người cần sự giúp đỡ đặc biệt trong các bữa ăn.",
+        service4:"Các phòng ở và khu vực sinh hoạt chung được thiết kế để mang lại cảm giác ấm cúng như ở nhà. Chúng tôi duy trì môi trường sạch sẽ, thoáng đãng và yên tĩnh để cư dân luôn cảm thấy thư thái và an tâm.",
+        service5:"Chúng tôi khuyến khích tham gia các hoạt động giao lưu xã hội, các bài tập nhẹ nhàng và duy trì nếp sống sinh hoạt ý nghĩa mỗi ngày. Các hoạt động trong nhà và ngoài trời giúp ông/bà luôn năng động và gắn kết quanh năm.",
+        service6:"Dịch vụ chăm sóc cuối đời (hospice) được cung cấp cho người cần sự hỗ trợ tập trung vào việc giảm nhẹ triệu chứng và mang lại sự thoải mái. Chúng tôi phối hợp chặt chẽ với gia đình và các chuyên gia y tế để đảm bảo khách hàng nhận được sự chăm sóc tận tâm, chu đáo trong giai đoạn nhạy cảm này.",
+
+
         footer1: "Mang lại sự thoải mái, sự chăm sóc tận tình và không gian sống ấm cúng, thân thiện cho cư dân. ",
       
         scheduleEyebrow: "Lên kế hoạch ghé thăm",
