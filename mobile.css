@@ -1,7 +1,7 @@
 /*
   Mobile-only overrides.
-  This file is also loaded with media="screen and (max-width: 768px)"
-  in the HTML, so these rules do not affect the desktop layout.
+  The HTML also loads this file with media="screen and (max-width: 768px)",
+  so the existing desktop layout remains unchanged.
 */
 @media screen and (max-width: 768px) {
     *,
@@ -26,45 +26,65 @@
     .navbar {
       position: relative;
       width: 100%;
-      min-height: 82px;
-      padding: 14px 18px;
-      display: flex !important;
-      flex-direction: row !important;
-      flex-wrap: wrap;
+      min-height: 76px;
+      padding: 12px 14px;
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) 44px minmax(92px, auto);
+      grid-template-areas:
+        "logo menu language"
+        "links links links";
       align-items: center !important;
-      justify-content: space-between !important;
-      gap: 0 !important;
+      gap: 8px 10px !important;
     }
   
     .navbar .logo {
-      order: 1;
-      max-width: calc(100% - 72px);
+      grid-area: logo;
+      min-width: 0;
+      max-width: 100%;
       margin: 0 !important;
-      font-size: clamp(24px, 7vw, 34px);
+      font-size: clamp(20px, 5.8vw, 30px);
       line-height: 1.1;
+      overflow-wrap: anywhere;
+    }
+  
+    /* The language selector remains visible in the top-right corner. */
+    .navbar #languageSelect {
+      grid-area: language;
+      display: block !important;
+      justify-self: end;
+      align-self: center;
+      width: auto !important;
+      min-width: 92px;
+      max-width: 122px;
+      min-height: 40px;
+      margin: 0 !important;
+      padding: 7px 8px;
+      font-size: 14px;
     }
   
     .mobile-menu-button {
-      order: 2;
-      width: 48px;
-      height: 48px;
+      grid-area: menu;
+      justify-self: end;
+      width: 44px;
+      height: 44px;
       margin: 0;
-      padding: 8px;
+      padding: 7px;
       border: 0;
       border-radius: 8px;
       background: transparent;
-      display: inline-flex;
+      display: inline-flex !important;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 6px;
       cursor: pointer;
+      color: inherit;
       -webkit-tap-highlight-color: transparent;
     }
   
     .mobile-menu-button span {
       display: block;
-      width: 31px;
+      width: 29px;
       height: 3px;
       border-radius: 999px;
       background: currentColor;
@@ -85,18 +105,19 @@
     }
   
     .navbar .nav-links {
-      order: 3;
+      grid-area: links;
       display: none !important;
       width: 100%;
-      margin: 14px 0 0 !important;
-      padding: 24px 4px 10px !important;
+      margin: 4px 0 0 !important;
+      padding: 14px 0 4px !important;
       flex-direction: column !important;
       align-items: stretch !important;
-      gap: 6px !important;
+      gap: 4px !important;
       list-style: none;
     }
   
-    .navbar.mobile-menu-open .nav-links {
+    .navbar.mobile-menu-open .nav-links,
+    .navbar .nav-links.open {
       display: flex !important;
     }
   
@@ -110,23 +131,9 @@
       width: 100%;
       padding: 12px 8px;
       text-align: left;
-      font-size: 19px;
+      font-size: 18px;
       line-height: 1.35;
       text-decoration: none;
-    }
-  
-    .navbar #languageSelect {
-      order: 4;
-      display: none !important;
-      width: 100%;
-      min-height: 48px;
-      margin: 6px 0 10px !important;
-      padding: 10px 12px;
-      font-size: 17px;
-    }
-  
-    .navbar.mobile-menu-open #languageSelect {
-      display: block !important;
     }
   
     /* ---------- Main mobile layout ---------- */

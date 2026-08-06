@@ -19,8 +19,21 @@
   </div>
 
   <header>
-    <nav class="navbar" id="mainNavbar">
-      <h1 class="logo"><a href="index.html#home" class="logo-home-link" data-i18n="logo">Celestial Garden</a></h1>
+    <nav class="navbar">
+      <h1 class="logo" data-i18n="logo">MyWebsite</h1>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" data-i18n="home">Home</a></li>
+        <li><a href="#about" data-i18n="about">About</a></li>
+        <li><a href="#services" data-i18n="services">Services</a></li>
+        <li><a href="#schedule-tour" data-i18n="navSchedule">Schedule Tour</a></li>
+        <li><a href="#contact" data-i18n="contact">Contact</a></li>
+      </ul>
+
+      <select id="languageSelect" onchange="setLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="vi">Tiếng Việt</option>
+      </select>
 
       <button
         id="menuToggle"
@@ -35,19 +48,6 @@
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </button>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home" data-i18n="home">Home</a></li>
-        <li><a href="#about" data-i18n="about">About</a></li>
-        <li><a href="#services" data-i18n="services">Services</a></li>
-        <li><a href="#schedule-tour" data-i18n="navSchedule">Schedule Tour</a></li>
-        <li><a href="#contact" data-i18n="contact">Contact</a></li>
-      </ul>
-
-      <select id="languageSelect" onchange="setLanguage(this.value)">
-        <option value="en">English</option>
-        <option value="vi">Tiếng Việt</option>
-      </select>
     </nav>
   </header>
 
@@ -156,6 +156,15 @@
         <a href="#about"data-i18n="about">About</a>
         <a href="#services" data-i18n="services">Services</a>
         <a href="#contact" data-i18n="contact">Contact</a>
+      </div>
+  
+      <div class="footer-column">
+        <h3>Services</h3>
+        <a href="#">Personal Care</a>
+        <a href="#">Assisted Living</a>
+        <a href="#">Memory Care</a>
+        <a href="#">Daily Activities</a>
+        <a href="#">Schedule a Tour</a>
       </div>
   
       <div class="footer-column">
