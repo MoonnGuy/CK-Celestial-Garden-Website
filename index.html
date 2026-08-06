@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My First Website</title>
+  <title>Celestial Garden-Nurshing Home</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)" />
 </head>
 <body>
   <div id="languageModal" class="language-modal">
@@ -18,10 +19,24 @@
   </div>
 
   <header>
-    <nav class="navbar">
-      <h1 class="logo" data-i18n="logo">MyWebsite</h1>
+    <nav class="navbar" id="mainNavbar">
+      <h1 class="logo"><a href="index.html#home" class="logo-home-link" data-i18n="logo">Celestial Garden</a></h1>
 
-      <ul class="nav-links">
+      <button
+        id="menuToggle"
+        class="mobile-menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="navLinks"
+        aria-expanded="false"
+        style="display: none;"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
         <li><a href="#home" data-i18n="home">Home</a></li>
         <li><a href="#about" data-i18n="about">About</a></li>
         <li><a href="#services" data-i18n="services">Services</a></li>
@@ -144,15 +159,6 @@
       </div>
   
       <div class="footer-column">
-        <h3>Services</h3>
-        <a href="#">Personal Care</a>
-        <a href="#">Assisted Living</a>
-        <a href="#">Memory Care</a>
-        <a href="#">Daily Activities</a>
-        <a href="#">Schedule a Tour</a>
-      </div>
-  
-      <div class="footer-column">
         <h3 class = footer-title>Address</h3>
         <p>
           <a href="https://www.google.com/maps/place/429+S+Shields+Dr,+Anaheim,+CA+92804" target="_blank" rel="noopener noreferrer">
@@ -187,5 +193,6 @@
   </footer>
 
   <script type="module" src="./script.js"></script>
+  <script src="./mobile.js" defer></script>
 </body>
 </html>

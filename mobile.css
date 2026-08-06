@@ -1,0 +1,220 @@
+/*
+  Mobile-only overrides.
+  This file is also loaded with media="screen and (max-width: 768px)"
+  in the HTML, so these rules do not affect the desktop layout.
+*/
+@media screen and (max-width: 768px) {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+  
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+  
+    /* ---------- Mobile header and menu ---------- */
+    header {
+      position: relative;
+      z-index: 1000;
+    }
+  
+    .navbar {
+      position: relative;
+      width: 100%;
+      min-height: 82px;
+      padding: 14px 18px;
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: wrap;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 0 !important;
+    }
+  
+    .navbar .logo {
+      order: 1;
+      max-width: calc(100% - 72px);
+      margin: 0 !important;
+      font-size: clamp(24px, 7vw, 34px);
+      line-height: 1.1;
+    }
+  
+    .mobile-menu-button {
+      order: 2;
+      width: 48px;
+      height: 48px;
+      margin: 0;
+      padding: 8px;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+  
+    .mobile-menu-button span {
+      display: block;
+      width: 31px;
+      height: 3px;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform 180ms ease, opacity 180ms ease;
+      pointer-events: none;
+    }
+  
+    .navbar.mobile-menu-open .mobile-menu-button span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+  
+    .navbar.mobile-menu-open .mobile-menu-button span:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .navbar.mobile-menu-open .mobile-menu-button span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  
+    .navbar .nav-links {
+      order: 3;
+      display: none !important;
+      width: 100%;
+      margin: 14px 0 0 !important;
+      padding: 24px 4px 10px !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 6px !important;
+      list-style: none;
+    }
+  
+    .navbar.mobile-menu-open .nav-links {
+      display: flex !important;
+    }
+  
+    .navbar .nav-links li {
+      width: 100%;
+      margin: 0;
+    }
+  
+    .navbar .nav-links a {
+      display: block;
+      width: 100%;
+      padding: 12px 8px;
+      text-align: left;
+      font-size: 19px;
+      line-height: 1.35;
+      text-decoration: none;
+    }
+  
+    .navbar #languageSelect {
+      order: 4;
+      display: none !important;
+      width: 100%;
+      min-height: 48px;
+      margin: 6px 0 10px !important;
+      padding: 10px 12px;
+      font-size: 17px;
+    }
+  
+    .navbar.mobile-menu-open #languageSelect {
+      display: block !important;
+    }
+  
+    /* ---------- Main mobile layout ---------- */
+    .section {
+      width: 100%;
+      margin: 0 !important;
+      padding: 40px 16px !important;
+    }
+  
+    .hero,
+    .schedule-hero {
+      width: 100%;
+      padding-left: 18px !important;
+      padding-right: 18px !important;
+    }
+  
+    .hero h2,
+    .schedule-hero h2,
+    .schedule-cta h2 {
+      font-size: clamp(30px, 9vw, 46px) !important;
+      line-height: 1.12;
+    }
+  
+    /* Two equal-width blocks per row on phones. */
+    .cards {
+      width: 100%;
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 14px !important;
+      align-items: stretch !important;
+    }
+  
+    .cards > .card {
+      width: 100% !important;
+      min-width: 0 !important;
+      height: 100%;
+      margin: 0 !important;
+      padding: 20px 14px !important;
+      text-align: left !important;
+      overflow-wrap: anywhere;
+    }
+  
+    .cards > .card h2,
+    .cards > .card h3 {
+      margin-top: 0;
+      font-size: clamp(18px, 5vw, 24px) !important;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+  
+    .cards > .card p {
+      font-size: clamp(14px, 3.8vw, 17px) !important;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+  
+    .schedule-layout {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: 22px !important;
+    }
+  
+    .schedule-card,
+    .tour-info-card {
+      width: 100%;
+      min-width: 0;
+      padding: 20px !important;
+    }
+  
+    input,
+    select,
+    textarea,
+    button {
+      max-width: 100%;
+    }
+  
+    /* ---------- Mobile footer ---------- */
+    .main-footer {
+      padding: 45px 22px 25px !important;
+    }
+  
+    .footer-container,
+    .footer-content {
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: 34px !important;
+    }
+  
+    .footer-bottom {
+      margin-top: 44px !important;
+    }
+  }
