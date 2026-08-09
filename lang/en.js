@@ -1,6 +1,6 @@
 export const en = {
     
-      logo: "Celestial Garden",
+      logo: "Celestial Garden Inc",
       home: "Home",
       about: "About Us",
       services: "Services",

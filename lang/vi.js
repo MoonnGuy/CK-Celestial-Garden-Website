@@ -1,5 +1,5 @@
 export const vi = {
-        logo: "Celestial Garden",
+        logo: "Celestial Garden Inc",
         home: "Trang chủ",
         about: "Giới thiệu",
         services: "Dịch vụ",
