@@ -2,9 +2,9 @@
   <img src="assets/images/gallery/ck_logo.png" alt="CK Celestial Garden logo" width="180">
 </p>
 
-# CK Celestial Garden Website
+# CK Celestial Garden INC Website
 
-A responsive, bilingual website for **CK Celestial Garden**, a residential-care and assisted-living home in Anaheim, California.
+A responsive, bilingual website for **CK - Celestial Garden INC**, a residential-care and assisted-living home in Anaheim, California.
 
 The website allows visitors to learn about the home, view services, switch between English and Vietnamese, and submit a tour request. After a tour request is submitted, the website shows an on-screen confirmation and uses the **Resend Email API** to notify the staff by email.
 
