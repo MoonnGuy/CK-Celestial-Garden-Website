@@ -16,8 +16,7 @@ The tour-scheduling feature follows this process:
 2. The visitor enters their name, phone number, and optional email address.
 3. The browser sends the information to `POST /api/bookings`.
 4. The Node.js server validates the request and checks the selected time.
-5. The booking is saved in `data/bookings.json`.
-6. The server sends an email notification through Resend to:
+5. The server sends an email notification through Resend to:
 
 ```text
 ck.celestialarden@gmail.com
@@ -26,7 +25,7 @@ ck.celestialarden@gmail.com
 7. The visitor sees a success notification on the website.
 8. A staff member reviews the email and manually contacts the visitor to confirm the tour.
 
-> The visitor does **not** automatically receive a confirmation email. The website displays a successful-submission notification, and the staff receives the email notification. The tour remains pending until the staff contacts the visitor.
+> The visitor does **not** automatically receive a confirmation email. The website displays a successful submission notification, and the staff receives the email notification. The tour remains pending until the staff contacts the visitor.
 
 ## Features
 
