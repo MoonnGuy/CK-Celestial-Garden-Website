@@ -77,7 +77,6 @@ When the visitor provides an email address, the server also sets that address as
 | Backend | Node.js 18 or newer |
 | Server | Node.js built-in `http` module |
 | Localization | JavaScript translation files and `localStorage` |
-| Booking storage | Local JSON file |
 | Email notifications | Resend REST API |
 | Source control | Git and GitHub |
 
